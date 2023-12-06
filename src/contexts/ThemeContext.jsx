@@ -13,8 +13,7 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     if (!savedTheme) {
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDarkMode ? darkTheme : lightTheme);
+      setTheme(darkTheme);
     }
   }, [savedTheme]);
 

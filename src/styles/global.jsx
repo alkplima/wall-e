@@ -41,10 +41,12 @@ export const GlobalStyle = createGlobalStyle`
 
   h3 {
     font: 700 2.5rem/3rem 'Inter', sans-serif;
+    text-align: left;
   }
 
   h4 {
     font: 700 2rem/2.5rem 'Inter', sans-serif;
+    text-align: left;
   }
 
   h5 {

@@ -22,33 +22,10 @@ export function Home() {
           )
         })}
       </CardsSection>
-      
-      <ApagarDps>
-        
-        <h1>Vite + React</h1>
-        <div className="card">
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </ApagarDps>
     </Container>
   )
 }
 
-const ApagarDps = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-`;
 
 const Container = styled.div`
   background-color: ${props => props.theme["surface"]};
@@ -62,25 +39,26 @@ const Container = styled.div`
 
 
 const Hero = styled.section`
-  width: 100%;
-  height: 100vh;
+  width: calc(100vw - 13rem);
+  height: calc((100vw - 13rem) * 0.51);
   background-image: url("./images/heroImg.png");
   background-repeat: no-repeat;
   background-size: contain;
+  position: relative;
 
   h3 {
     position: absolute;
-    bottom: 0;
+    bottom: 1.5rem;
+    left: 2rem;
     max-width: 30%;
   }
 `;
 
 const CardsSection = styled.section`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  flex-wrap: wrap; /* Permite a quebra de linha */
+  justify-content: space-between;
+  gap: 1rem;
   width: 100%;
   /* margin: 0 auto; */
 `;
