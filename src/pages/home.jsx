@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { ThemeToggle } from "../components/ThemeToggle";
+import { Card } from "../components/Card";
+import cards from "../../data/cards";
 
 export function Home() {
 
@@ -12,6 +14,14 @@ export function Home() {
           <h3>Mensagens ocultas no universo solitário do Wall-E</h3>
         </div>
       </Hero>
+
+      <CardsSection>
+        {Object.entries(cards).map(([key, card]) => {
+          return (
+            <Card key={key} title={card.title} description={card.description} image={card.image} />
+          )
+        })}
+      </CardsSection>
       
       <ApagarDps>
         
@@ -57,6 +67,12 @@ const Hero = styled.section`
   background-image: url("./images/heroImg.png");
   background-repeat: no-repeat;
   background-size: contain;
+
+  h3 {
+    position: absolute;
+    bottom: 0;
+    max-width: 30%;
+  }
 `;
 
 const CardsSection = styled.section`
