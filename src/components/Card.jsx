@@ -15,7 +15,7 @@ const hide = {
   }
 };
 
-export function Card({ title, description, image }) {
+export function Card({ title, description, image, image_mobile }) {
   const [isVisible, setIsVisible] = useState(false);
 
   function checkTextForLineBreak(text) {
@@ -45,7 +45,8 @@ export function Card({ title, description, image }) {
           <CloseButton onClick={() => setIsVisible(!isVisible)}>
             <X size={20} />
           </CloseButton>
-          <img src={image} alt={title} />
+          <img className="image_desktop" src={image} alt={title} />
+          <img className="image_mobile" src={image_mobile} alt={title} />
           <div className="popup-text">
             <h4>{title}</h4>
             <p>{checkTextForLineBreak(description)}</p>
@@ -59,9 +60,6 @@ export function Card({ title, description, image }) {
 const CardContainer = styled.div`
   width: calc(33% - 1rem);
   margin-bottom: 1rem;
-  /* height: calc((30vw) * 1.17); */
-  /* width: 34rem;
-  height: 40rem; */
 
   .button {
     position: relative;
@@ -98,7 +96,7 @@ const CardContainer = styled.div`
       background-size: cover;
       opacity: 0;
       transition: opacity .3s ease-in-out; 
-  }
+    }
 
     .controls {
       width: 100%;
@@ -111,7 +109,7 @@ const CardContainer = styled.div`
     position: fixed;
     width: 100vw;
     height: 100vh;
-    inset: 0; /* top, bottom, right e left = 0 */
+    inset: 0;
     background: rgba(0, 0, 0, 0.75);
     z-index: 900;
   }
@@ -122,7 +120,20 @@ const CardContainer = styled.div`
       background: ${props => props.theme["inverse-on-surface"]};
 
       &:before {
-        opacity: 0.5; /* Define a opacidade durante a transição */
+        opacity: 0.5; 
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+
+    .button {
+      padding: 3rem 1.5rem;
+      padding-bottom: 100%;
+
+      &:before {
+        opacity: 0.2; 
       }
     }
   }
@@ -147,11 +158,16 @@ const Content = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  img {
+  .image_desktop {
+    display: block;
     width: 35rem;
     height: 100%;
     max-width: 30rem;
     border-radius: 8px;
+  }
+
+  .image_mobile {
+    display: none;
   }
 
   .popup-text {
@@ -166,8 +182,39 @@ const Content = styled.div`
   }
 
   @media (max-width: 1024px) {
-    min-width: 90vw;
-    padding: 1.5rem 1rem;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    left: 0;
+    top: 0;
+    transform: none;
+    border-radius: 0 !important;
+    height: 100%;
+    padding: 4rem 1rem 1rem 1rem;
+    flex-direction: column;
+
+    .image_desktop {
+      display: none;
+    }
+
+    .image_mobile {
+      display: block;
+      width: calc(100vw - 2rem);
+      height: calc((100vw - 2rem) * 0.58);
+      border-radius: 8px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    .popup-text {
+      padding-right: 0;
+
+      p {
+        max-height: 50vh;
+        overflow-y: scroll;
+      }
+
+    }
   }
 `;
 
@@ -190,5 +237,10 @@ export const CloseButton = styled.div`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 1024px) {
+    top: 1rem;
+    right: 1rem;
   }
 `;
