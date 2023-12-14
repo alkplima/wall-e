@@ -15,7 +15,7 @@ const hide = {
   }
 };
 
-export function Card({ title, description, image, image_mobile }) {
+export function Card({ title, subtitle, description, image, image_mobile }) {
   const [isVisible, setIsVisible] = useState(false);
 
   function checkTextForLineBreak(text) {
@@ -49,6 +49,7 @@ export function Card({ title, description, image, image_mobile }) {
           <img className="image_mobile" src={image_mobile} alt={title} />
           <div className="popup-text">
             <h4>{title}</h4>
+            <h5>{subtitle}</h5>
             <p>{checkTextForLineBreak(description)}</p>
           </div>
         </Content>
@@ -120,7 +121,7 @@ const CardContainer = styled.div`
       background: ${props => props.theme["inverse-on-surface"]};
 
       &:before {
-        opacity: 0.5; 
+        opacity: 0.3; 
       }
     }
   }
@@ -179,6 +180,11 @@ const Content = styled.div`
     h4 {
       color: ${props => props.theme['primary']};
     }
+
+    p {
+      max-height: 50vh;
+      overflow-y: scroll;
+    }
   }
 
   @media (max-width: 1024px) {
@@ -208,12 +214,6 @@ const Content = styled.div`
 
     .popup-text {
       padding-right: 0;
-
-      p {
-        max-height: 50vh;
-        overflow-y: scroll;
-      }
-
     }
   }
 `;

@@ -18,7 +18,7 @@ export function Home() {
       <CardsSection>
         {Object.entries(cards).map(([key, card]) => {
           return (
-            <Card key={key} title={card.title} description={card.description} image={card.image} image_mobile={card.image_mobile} />
+            <Card key={key} title={card.title} subtitle={card.subtitle} description={card.description} image={card.image} image_mobile={card.image_mobile} />
           )
         })}
       </CardsSection>
@@ -33,18 +33,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 6.5rem;
-  gap: 13rem;
+  padding: 5rem 10rem;
+  gap: 6rem;
 
   @media (max-width: 1024px) {
     padding: 4.5rem 1rem;
+    gap: 13rem;
   }
 `;
 
 
 const Hero = styled.section`
-  width: calc(100vw - 13rem);
-  height: calc((100vw - 13rem) * 0.51);
+  width: calc(100vw - 20rem);
+  height: calc((100vw - 20rem) * 0.51);
   background-image: url("./images/heroImg.png");
   background-repeat: no-repeat;
   background-size: contain;

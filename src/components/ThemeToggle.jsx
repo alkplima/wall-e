@@ -16,8 +16,8 @@ export function ThemeToggle() {
 
 const ToggleWrapper = styled.div`
   position: absolute;
-  top: 1rem;
-  right: 6.5rem;
+  top: 1.25rem;
+  right: 10rem;
 
   button {
     background-color: ${props => props.theme['surface-variant']};
