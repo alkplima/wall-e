@@ -20,24 +20,27 @@ const cards = {
   },
   3: {
     title: 'Inocência virtuosa',
-    description: `Ao longo dos anos Wall-E desenvolve uma espécie de personalidade, colecionando objetos que considera valiosos. Esta atividade preenche a sua existência, indicando uma busca por significado e propósito.
-
-    Através da lente semiótica, esses objetos constituem signos que o personagem utiliza para elaborar um sistema simbólico que compense a ausência de interações sociais.
+    subtitle: 'Texto (parte 1)',
+    description: `Podemos analisar a estrutura narrativa do filme por meio de quatro principais pontos:
     
-    Por meio desses signos a saúde mental é explorada, mostrando a necessidade humana básica de conexão e significado na vida.`,
+    1. Manipulação: no conforto de sua solidão, Wall-E precisava de um estopim para o início da história. A introdução de Eva faz com que o protagonista tenha o gosto de uma vida diferente, que logo é quase tirada dele com a abdução de sua amiga. Ele precisa enfrentar o desconhecido para mantê-la.
+    
+    2. Competência: mesmo estando no estranho mundo consumista da nave, Wall-E nunca precisou mudar como pessoa. Sua curiosidade e personalidade infantil já são exatamente o que as pessoas precisavam.`,
     image: './images/saude.png',
     image_mobile: './images/saude_mobile.png'
   },
   4: {
     title: 'Contaminação conscientizadora',
-    description: `A dinâmica do filme muda quando Eva, um robô de busca, chega na Terra. O foco se torna então a relação entre Wall-E e Eva. Inicialmente, a comunicação entre eles é não verbal, por meio de gestos e expressões, o que pode ser interpretado como uma tentativa de superar a barreira da solidão e da falta de compreensão.
-
-    Aqui a semiótica destaca a importância dos signos não verbais na expressão emocional e na construção de relações, enfatizando novamente a necessidade fundamental de conexão humana.`,
+    subtitle: 'Texto (parte 2)',
+    description: `3. Performance: com seu ponto de vista único, o protagonista faz com que a tripulação questione seu próprio ambiente. Seus isolamento no espaço, hábitos consumistas e propósito de vida são colocados em cheque, ocasionando as mudanças em sua sociedade.
+    
+    4. Sanção: ao conscientizar as pessoas ao seu redor, Wall-E é capaz de ajudar a Eva e trazer ideais ecológicos à nova geração da humanidade, proporcionando a eventual restauração da Terra.`,
     image: './images/solidao.png',
     image_mobile: './images/solidao_mobile.png'
   },
   5: {
     title: 'Discurso silencioso',
+    subtitle: 'Discurso',
     description: `A obra emprega uma linguagem visual cativante, caracterizada pela narrativa silenciosa e trilha sonora envolvente. A solidão de Wall-E é transmitida por meio de cenas que destacam sua pequenez no vasto cenário de lixo. A escolha de músicas antigas cria uma atmosfera nostálgica, acentuando a sensação de estagnação temporal. 
 
     A ausência de diálogos diretos do personagem principal, aliada à sua personalidade inocente, desperta empatia no espectador, intensificando a mensagem de solidão. A ênfase visual no lixo como substituto da sociedade serve como metáfora poderosa, enquanto a falta de uma explicação explícita instiga o espectador a refletir sobre a urgência ambiental, apresentando a Terra como um planeta sufocado pelo descarte desenfreado.`,
